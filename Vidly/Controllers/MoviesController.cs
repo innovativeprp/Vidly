@@ -15,5 +15,10 @@ namespace Vidly.Controllers
             var movie = new Movie { Name = "Shrek!" };
             return View(movie);
         }
+
+        public ActionResult MoviesByReleaseDate(int year,int month)
+        {
+            return Content($"Year -{year} : Month -{month}");
+        }
     }
 }
