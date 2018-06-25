@@ -223,6 +223,14 @@
     <Compile Include="Migrations\201806250841062_ApplyDataAnnotationToCustomerName.Designer.cs">
       <DependentUpon>201806250841062_ApplyDataAnnotationToCustomerName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806251647475_AddMemmbershipName.cs" />
+    <Compile Include="Migrations\201806251647475_AddMemmbershipName.Designer.cs">
+      <DependentUpon>201806251647475_AddMemmbershipName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806251649034_PopulateDatainMembershipType.cs" />
+    <Compile Include="Migrations\201806251649034_PopulateDatainMembershipType.Designer.cs">
+      <DependentUpon>201806251649034_PopulateDatainMembershipType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -235,6 +243,10 @@
     <Compile Include="ViewModel\RandomMovieViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-Vidly-20180622104315.mdf" />
+    <Content Include="App_Data\aspnet-Vidly-20180622104315_log.ldf">
+      <DependentUpon>aspnet-Vidly-20180622104315.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-lumen.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -299,9 +311,7 @@
     <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Customer\Details.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -330,6 +340,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806250841062_ApplyDataAnnotationToCustomerName.resx">
       <DependentUpon>201806250841062_ApplyDataAnnotationToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806251647475_AddMemmbershipName.resx">
+      <DependentUpon>201806251647475_AddMemmbershipName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806251649034_PopulateDatainMembershipType.resx">
+      <DependentUpon>201806251649034_PopulateDatainMembershipType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
