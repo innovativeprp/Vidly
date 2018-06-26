@@ -38,5 +38,12 @@ namespace Vidly.Controllers
             };
             return View(newCustomerViewModel);
         }
+
+        public ActionResult Create(Customer customer)
+        {
+            _dbContext.Customers.Add(customer);
+            _dbContext.SaveChanges();
+            return RedirectToAction("Index", "Customer");
+        }
     }
   }
