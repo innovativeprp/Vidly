@@ -51,9 +51,21 @@ namespace Vidly.Controllers
             return View("CustomerForm",newCustomerViewModel);
         }
 
-        public ActionResult Create(Customer customer)
+        public ActionResult Save(Customer customer)
         {
-            _dbContext.Customers.Add(customer);
+            if (customer.Id == 0)
+            {
+                _dbContext.Customers.Add(customer);
+            }
+            else
+            {
+                var customerInDb = _dbContext.Customers.Single(c => c.Id == customer.Id);
+                customerInDb.Name = customer.Name;
+                customerInDb.BirthDate = customer.BirthDate;
+                customerInDb.MembershipTypeId = customer.MembershipTypeId;
+                customerInDb.IsSubscribedToNewsLetter = customer.IsSubscribedToNewsLetter;
+            }
+
             _dbContext.SaveChanges();
             return RedirectToAction("Index", "Customer");
         }
