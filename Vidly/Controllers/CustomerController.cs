@@ -51,7 +51,7 @@ namespace Vidly.Controllers
             return View("CustomerForm",newCustomerViewModel);
         }
         [HttpPost]
-        public ActionResult Save(Customer customer)
+        public ActionResult Save([Bind(Exclude ="Id")]Customer customer)
         { 
             if(!ModelState.IsValid)
             {
