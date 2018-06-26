@@ -2,4 +2,4 @@
 
 <h2>Customer        : @Model.Name</h2>
 <h2>Membership Type : @Model.MembershipType.Name</h2>
-<h2>BirthDate       : @Model.BirthDate.ToShortDateString()</h2>
+<h2>       @(Model.BirthDate.HasValue ? "BirthDate:"+ Model.BirthDate.Value.ToShortDateString() : null) </h2>
