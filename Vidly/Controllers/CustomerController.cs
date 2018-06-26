@@ -29,14 +29,26 @@ namespace Vidly.Controllers
             return View(customer);
         }
 
+        public ActionResult Edit(int id)
+        {
+            var customer = _dbContext.Customers.SingleOrDefault(c => c.Id == id);
+            if (customer == null) return HttpNotFound();
+            var customerViewModel = new CustomerViewModel
+            {
+                Customer = customer,
+                MembershipTypes = _dbContext.MembershipTypes.ToList()
+            };
+            return View("CustomerForm", customerViewModel);
+        }
+
         public ActionResult New()
         {
             var memebershipTypes = _dbContext.MembershipTypes.ToList();
-            var newCustomerViewModel = new NewCustomerViewModel
+            var newCustomerViewModel = new CustomerViewModel
             {
                 MembershipTypes = memebershipTypes
             };
-            return View(newCustomerViewModel);
+            return View("CustomerForm",newCustomerViewModel);
         }
 
         public ActionResult Create(Customer customer)
