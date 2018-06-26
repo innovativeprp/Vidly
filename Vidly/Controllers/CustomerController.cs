@@ -50,9 +50,9 @@ namespace Vidly.Controllers
             };
             return View("CustomerForm",newCustomerViewModel);
         }
-
-        public ActionResult Save(Customer customer)
-        {
+        [HttpPost]
+        public ActionResult Save([Bind(Exclude ="Id")]Customer customer)
+        { 
             if(!ModelState.IsValid)
             {
                 var memebershipTypes = _dbContext.MembershipTypes.ToList();
