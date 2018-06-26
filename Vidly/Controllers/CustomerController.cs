@@ -28,5 +28,10 @@ namespace Vidly.Controllers
             if (customer == null) return HttpNotFound();
             return View(customer);
         }
+
+        public ActionResult New()
+        {
+            return View();
+        }
     }
   }
