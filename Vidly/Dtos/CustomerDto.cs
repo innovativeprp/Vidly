@@ -15,7 +15,7 @@ namespace Vidly.Dtos
         [StringLength(255)]
         public string Name { get; set; }     
 
-        [CustomerValidation]
+       // [CustomerValidation]
         public DateTime? BirthDate { get; set; }
 
         public bool IsSubscribedToNewsLetter { get; set; }  
